@@ -1,0 +1,14 @@
+.reveal section img {
+  background:none;
+  border:none;
+  box-shadow:none;
+}
+
+pre {
+  max-width: 1000px;
+  overflow: auto;
+}
+
+.minuscula {
+  text-transform: lowercase !important;
+}
