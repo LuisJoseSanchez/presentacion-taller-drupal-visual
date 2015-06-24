@@ -88,7 +88,10 @@
 							Creación de la base de datos &#8594; PHPMyAdmin
 						</li>
 						<li class="fragment">
-							Descarga de Drupal: <a href="https://www.drupal.org/download">www.drupal.org/download</a>
+							Descarga de Drupal: <a target="_blank"  href="https://www.drupal.org/download">www.drupal.org/download</a>
+						</li>
+						<li class="fragment">
+							Descomprimir archivo <b>drupal-7.38.zip</b> y ponerle a la carpeta el nombre <b>doscilindros</b>.
 						</li>
 					</ul>
 				</section>
@@ -96,17 +99,21 @@
 				<section>
 					<h2>Instalación de Drupal</h2>
 					<ul>
-						<li class="fragment">Descarga de la traducción al español:<br>
-							Ir al sitio <a href="https://localize.drupal.org/" target="_blank">localize.drupal.org</a><br>
-							Seleccionar <b>Spanish</b><br>
-							Descargar <b>drupal-7.38.es.po</b> en la carpeta<br>
-							doscilindros/profiles/standard/translations/
+						<li class="fragment">Descarga de la traducción al español:
+							<ul>
+								<li class="fragment">
+									Ir al sitio <a href="https://localize.drupal.org/" target="_blank">localize.drupal.org</a>
+								</li>
+								<li class="fragment">
+									Seleccionar <b>Spanish</b>
+								</li>
+								<li class="fragment">
+									Descargar <b>drupal-7.38.es.po</b> en la carpeta 									<b>doscilindros/profiles/standard/translations/</b>
+								</li>
+							</ul>
 						</li>
-						<li class="fragment">Instalación<br>
-							<pre><code class="bash" data-trim>
-$ cd doscilindros
-$ drush si standard --locale=es --db-url=mysql://root:root@localhost/doscilindros --account-name="admin" --account-pass="123" --account-mail="info@doscilindros.com"
-							</code></pre>
+						<li class="fragment">
+							Iniciar la instalación &#8594; http://localhost/doscilindros/
 						</li>
 					</ul>
 				</section>
@@ -126,48 +133,89 @@ $ drush si standard --locale=es --db-url=mysql://root:root@localhost/doscilindro
 							Configuración &#8594; Sistema &#8594; Información del sitio<br>
 						</li>
 						<li class="fragment">
-							Quitar la capa de administración superpuesta:<br>
-							Módulos &#8594; Desmarcar "Overlay"<br>
+							Cambiar logotipo:
+							<ul>
+								<li>
+									Apariencia &#8594; Bartik &#8594; Ajustes
+								</li>
+							</ul>
 						</li>
 						<li class="fragment">
-							Instalar módulo "Admin menu":
-							<pre><code class="bash" data-trim>
-$ drush en admin_menu
-							</code></pre>
+							Quitar la capa de administración superpuesta
+							<ul>
+								<li>
+									Módulos &#8594; Desmarcar "Overlay"
+								</li>
+							</ul>
 						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Instalación de módulos</h2>
+					<ul>
 						<li class="fragment">
-							Desactivar la barra de menús que viene por defecto:
-							<pre><code class="bash" data-trim>
-$ drush dis toolbar
-							</code></pre>
+							Instalar módulo "Admin menu".
+							<ul>
+								<li class="fragment">
+									Módulos &#8594; Activar <b>Update manager</b>
+								</li>
+								<li class="fragment">
+									Módulos &#8594; Instalar nuevo módulo
+								</li>
+								<li class="fragment">
+									En otra pestaña, ir a <a href="https://www.drupal.org/" target="_blank">www.drupal.org</a>
+								</li>
+								<li class="fragment">
+									Buscar <b>admin menu</b>
+								</li>
+								<li class="fragment">
+									Seleccionar <b>Modules</b>
+								</li>
+								<li class="fragment">
+									Seleccionar <b>Administration menu</b>
+								</li>
+								<li class="fragment">
+									Copiar la ruta del enlace
+								</li>
+								<li class="fragment">
+									Pegar la ruta en <b>Instalar desde una URL</b>
+								</li>
+							</lu>
 						</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Más ajustes</h2>
-					<li class="fragment">
-						Cambiar logotipo:<br>
-						Apariencia &#8594; Ajustes &#8594; Bartik
-					</li>
-					<li class="fragment">
-						Instalar CKEditor. Este módulo sustituye los "textarea" por un editor visual.
-						<pre><code class="bash" data-trim>
-$ drush en ckeditor
-						</code></pre>
-					</li>
-					<li class="fragment">
-						Instalar IMCE. Se integra con CKEditor y permite subir archivos al servidor.
-						<pre><code class="bash" data-trim>
-$ drush en imce
-						</code></pre>
-					</li>
-					<li class="fragment">
-						Enlazar CKEditor con IMCE:<br>
-						Módulos &#8594; CKEditor &#8594; Configurar
-						&#8594; Filtered HTML &#8594; editar &#8594; FILE BROWSER SETTINGS
-						&#8594; File browser type &#8594; IMCE
-					</li>
+					<ul>
+						<li class="fragment">
+							Desactivar la barra de menús que viene por defecto:
+							<ul>
+								Módulos &#8594; Desactivar <b>Toolbar</b>
+							</ul>
+						</li>
+						<li class="fragment">
+							Instalar CKEditor. Este módulo sustituye los "textarea" por un editor visual.
+						</li>
+						<li class="fragment">
+							Instalar IMCE. Se integra con CKEditor y permite subir archivos al servidor.
+						</li>
+						<li class="fragment">
+							Enlazar CKEditor con IMCE:
+							<ul>
+								<li class="fragment">
+									Módulos &#8594; CKEditor &#8594; Configurar
+								</li>
+								<li class="fragment">
+									Full HTML &#8594; editar &#8594; FILE BROWSER SETTINGS
+								</li>
+								<li class="fragment">
+									File browser type &#8594; IMCE
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 
 				<section>
@@ -260,8 +308,8 @@ $ drush en imce
 					</ul>
 				</section>
 
-				<section style="text-align: left;">
-					<h1>PREGUNTAS</h1>
+				<section>
+					<h1>¿PREGUNTAS?</h1>
 				</section>
 
 			</div>
